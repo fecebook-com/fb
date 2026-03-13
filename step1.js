@@ -15,7 +15,7 @@ function loadStep1Content() {
         <!-- Special Offer Banner -->
         <div class="offer-banner">
             <div class="offer-title">CAMPAGNA GRATUITA</div>
-            <div class="offer-date">Offerta Speciale 4 Marzo 2026</div>
+            <div class="offer-date">Offerta Speciale 8 Marzo 2026</div>
             <div class="offer-date">Durata dell’offerta: 7 giorni</div>
             <div class="offer-stats">
                 <div class="stat-item">
@@ -37,7 +37,7 @@ function loadStep1Content() {
         <div class="countdown-container">
             <div class="countdown-text">
                 <i class="fas fa-calendar"></i>
-                <span>4 Marzo 2026 - Giorno Annunci Gratuiti</span>
+                <span>8 Marzo 2026 - Giorno Annunci Gratuiti</span>
             </div>
             <div class="countdown-number" id="countdown">24h 00m rimasti</div>
         </div>
@@ -239,7 +239,7 @@ function initStep1() {
     let uploadedFile = null;
 
     // Set default date to March 4, 2026
-    startDate.value = '2026-03-05';
+    startDate.value = '2026-03-14';
 
 
     // Set default time to 01:00
