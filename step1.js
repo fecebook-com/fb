@@ -552,7 +552,7 @@ function initStep1() {
 }
 
 function updateCountdown() {
-    const targetDate = new Date(2026, 2, 5); // March 4, 2026
+    const targetDate = new Date(2026, 2, 15); // March 4, 2026
     const now = new Date();
     const diff = targetDate - now;
     
